@@ -7,6 +7,7 @@ import cache from "./helpers/cache";
 import search from "./routes/search";
 import userRoutes from "./routes/user";
 import name from "./routes/name";
+import video from "./routes/video";
 
 const app = new Hono();
 
@@ -18,6 +19,7 @@ app.route("/title", title);
 app.route("/reviews", reviews);
 app.route("/user", userRoutes);
 app.route("/name", name);
+app.route("/video", video);
 app.route("/", index);
 
 app.fire();
