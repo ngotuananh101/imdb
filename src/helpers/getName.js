@@ -28,10 +28,10 @@ export default async function getTitle(id) {
     id: id,
     imdb: `https://www.imdb.com/name/${id}`,
     name: props.aboveTheFold.nameText.text,
-    bio: props.aboveTheFoldData.bio.bioText.plainText,
+    bio: props.aboveTheFold.bio.bioText.plainText,
     birthDate: getDob(props.mainColumnData.birthDate.dateComponents),
     birthLocation: props.mainColumnData.birthLocation.text,
-    image: props.aboveTheFoldData.primaryImage.url,
+    image: props.aboveTheFold.primaryImage.url,
     images: props.mainColumnData.titleMainImages.edges
       .filter((e) => e.__typename === "ImageEdge")
       .map((e) => e.node.url),
