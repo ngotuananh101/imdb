@@ -28,6 +28,9 @@ export default async function getTitle(id) {
     id: id,
     imdb: `https://www.imdb.com/name/${id}`,
     name: props.aboveTheFold.nameText.text,
+    alternativeNames: props.mainColumnData.akas.edges
+      .filter((e) => e.__typename === "NameAka")
+      .map((e) => e.node.displayableProperty.value.plainText),
     bio: props.aboveTheFold.bio.text.plainText,
     birthDate: getDob(props.mainColumnData.birthDate.dateComponents),
     birthLocation: props.mainColumnData.birthLocation.text,
