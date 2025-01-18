@@ -105,7 +105,7 @@ export default async function getTitle(id) {
     })),
     videos: props.aboveTheFoldData?.primaryVideos?.edges?.map((e) => ({
       type: e.node.playbackURLs[0].videoMimeType,
-      definition: e.node.playbackURLs[0].displayName.value,
+      quality: e.node.playbackURLs[0].displayName.value,
       url: e.node.playbackURLs[0].url,
     })) ?? [],
     ...(props.aboveTheFoldData.titleType.isSeries

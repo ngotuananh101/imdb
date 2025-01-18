@@ -22,7 +22,7 @@ async function getFromYTS(query) {
         torrents = torrents.map((torrent) => {
             return {
                 type: "torrent",
-                definition: `${torrent.quality} (${torrent.type})`,
+                quality: `${torrent.quality} (${torrent.type})`,
                 size: torrent.size,
                 url: torrent.url,
             }
@@ -31,7 +31,7 @@ async function getFromYTS(query) {
             torrents.push({
                 type: "trailer",
                 url: `https://www.youtube.com/watch?v=${torrents.yt_trailer_code}`,
-                definition: "multi",
+                quality: "multi",
             });
         }
         return torrents ?? [];
@@ -45,17 +45,17 @@ search.get("/movie/:id", async (c) => {
     let data = await getFromYTS(query);
     data.push({
         type: "embed",
-        definition: "multi",
+        quality: "multi",
         url: `https://www.2embed.cc/embed/${query}`,
     });
     data.push({
         type: "embed",
-        definition: "multi",
+        quality: "multi",
         url: `https://vidsrc.me/embed/movie?imdb=${query}`,
     });
     data.push({
         type: "embed",
-        definition: "multi",
+        quality: "multi",
         url: `https://vidsrc.to/embed/movie/${query}`,
     });
     c.status(200);
