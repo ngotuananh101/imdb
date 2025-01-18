@@ -22,9 +22,8 @@ async function getFromYTS(query) {
         torrents = torrents.map((torrent) => {
             return {
                 type: "torrent",
-                definition: torrent.quality,
+                definition: `${torrent.quality} (${torrent.type})`,
                 size: torrent.size,
-                bluray: torrent.type === "bluray" ? true : false,
                 url: torrent.url,
             }
         });
