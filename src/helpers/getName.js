@@ -31,6 +31,7 @@ export default async function getTitle(id) {
     bio: props.aboveTheFold.bio.text.plainText,
     birthDate: getDob(props.mainColumnData.birthDate.dateComponents),
     birthLocation: props.mainColumnData.birthLocation.text,
+    height: props.mainColumnData.displayableProperty.value.plainText,
     image: props.aboveTheFold.primaryImage.url,
     images: props.mainColumnData.images.edges
       .filter((e) => e.__typename === "ImageEdge")
