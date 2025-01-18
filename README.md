@@ -8,6 +8,9 @@
 - High Performance
 - Get episode information
 - Get all reviews with full pagination supported
+- Get user information
+- Get user ratings and reviews
+- Get actor information
 
 ## Installation 📦
 
@@ -31,14 +34,15 @@ After deployed, map the worker to a Domain Name to configure cache. Only Workers
 
 ## API 📡
 
-| Endpoint                                                                                         | Method | Description                               |
-| ------------------------------------------------------------------------------------------------ | ------ | ----------------------------------------- |
-| `/search?query={query}`                                                                          | GET    | Search titles by title                    |
-| `/title/{imdb_id}`                                                                               | GET    | Get details of a title                    |
-| `/reviews/{imdb_id}?option={helpfulness\|date\|votes\|rating}&sortOrder={asc\|desc}`             | GET    | Get reviews of a title                    |
-| `/title/{imdb_id}/season/{season_id}`                                                            | GET    | (New) Fetch a single season of a series   |
-| `/user/{user_id}`                                                                                | GET    | (New) Fetch an user's info                |
-| `/user/{user_id}/ratings?ratingFilter={1-10}&sort={most_recent\|oldest\|top_rated\|worst_rated}` | GET    | (New) Fetch an user's ratings and reviews |
+| Endpoint                                                                                         | Method | Description                         |
+| ------------------------------------------------------------------------------------------------ | ------ | ----------------------------------- |
+| `/search?query={query}`                                                                          | GET    | Search titles by title              |
+| `/title/{imdb_id}`                                                                               | GET    | Get details of a title              |
+| `/reviews/{imdb_id}?option={helpfulness\|date\|votes\|rating}&sortOrder={asc\|desc}`             | GET    | Get reviews of a title              |
+| `/title/{imdb_id}/season/{season_id}`                                                            | GET    | Fetch a single season of a series   |
+| `/user/{user_id}`                                                                                | GET    | Fetch an user's info                |
+| `/user/{user_id}/ratings?ratingFilter={1-10}&sort={most_recent\|oldest\|top_rated\|worst_rated}` | GET    | Fetch an user's ratings and reviews |
+| `/name/{name_id}`                                                                                | GET    | (New) Fetch an actor's info         |
 
 ## License 🎯
 
