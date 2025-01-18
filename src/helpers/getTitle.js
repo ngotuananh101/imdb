@@ -18,14 +18,14 @@ export default async function getTitle(id) {
 
     return result
       ? result.credits.map((e) => {
-          if (v === "2")
-            return {
-              id: e.name.id,
-              name: e.name.nameText.text,
-            };
+        if (v === "2")
+          return {
+            id: e.name.id,
+            name: e.name.nameText.text,
+          };
 
-          return e.name.nameText.text;
-        })
+        return e.name.nameText.text;
+      })
       : [];
   };
 
@@ -90,14 +90,14 @@ export default async function getTitle(id) {
     filmingLocations: props.mainColumnData.filmingLocations.edges.map(
       (e) => e.node.text
     ),
-    actors: getCredits("cast"),
-    actors_v2: getCredits("cast", "2"),
-    creators: getCredits("creator"),
-    creators_v2: getCredits("creator", "2"),
-    directors: getCredits("director"),
-    directors_v2: getCredits("director", "2"),
-    writers: getCredits("writer"),
-    writers_v2: getCredits("writer", "2"),
+    // actors: getCredits("cast"),
+    actors: getCredits("cast", "2"),
+    // creators: getCredits("creator"),
+    creators: getCredits("creator", "2"),
+    // directors: getCredits("director"),
+    directors: getCredits("director", "2"),
+    // writers: getCredits("writer"),
+    writers: getCredits("writer", "2"),
     top_credits: props.aboveTheFoldData.principalCredits.map((e) => ({
       id: e.category.id,
       name: e.category.text,
