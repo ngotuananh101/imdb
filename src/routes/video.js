@@ -24,6 +24,7 @@ async function getFromYTS(query) {
                 type: "torrent",
                 definition: torrent.quality,
                 size: torrent.size,
+                bluray: torrent.type === "bluray" ? true : false,
                 url: torrent.url,
             }
         });
