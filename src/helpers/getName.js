@@ -32,7 +32,7 @@ export default async function getTitle(id) {
     birthDate: getDob(props.mainColumnData.birthDate.dateComponents),
     birthLocation: props.mainColumnData.birthLocation.text,
     image: props.aboveTheFold.primaryImage.url,
-    images: props.mainColumnData.titleMainImages.edges
+    images: props.mainColumnData.images.edges
       .filter((e) => e.__typename === "ImageEdge")
       .map((e) => e.node.url),
   };
