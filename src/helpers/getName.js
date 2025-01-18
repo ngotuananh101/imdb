@@ -27,21 +27,21 @@ export default async function getTitle(id) {
   return {
     id: id,
     imdb: `https://www.imdb.com/name/${id}`,
-    name: props.aboveTheFold.nameText.text,
-    alternativeNames: props.mainColumnData.akas.edges
-      .filter((e) => e.__typename === "NameAka")
-      .map((e) => e.node.displayableProperty.value.plainText),
-    bio: props.aboveTheFold.bio.text.plainText,
-    birthDate: getDob(props.mainColumnData.birthDate.dateComponents),
-    birthLocation: props.mainColumnData.birthLocation.text,
-    height: props.mainColumnData.displayableProperty.value.plainText,
-    image: props.aboveTheFold.primaryImage.url,
-    images: props.mainColumnData.images.edges
-      .filter((e) => e.__typename === "ImageEdge")
-      .map((e) => e.node.url),
-    primaryProfessions: props.mainColumnData.primaryProfessions
-      .map((e) => e.category.text),
-    jobs: props.mainColumnData.jobs
-      .map((e) => e.category.text),
+    name: props.aboveTheFold?.nameText?.text || '',
+    alternativeNames: props.mainColumnData?.akas?.edges
+      ?.filter((e) => e.__typename === "NameAka")
+      ?.map((e) => e.node.displayableProperty.value.plainText) || [],
+    bio: props.aboveTheFold?.bio?.text?.plainText || '',
+    birthDate: getDob(props.mainColumnData?.birthDate?.dateComponents) || '',
+    birthLocation: props.mainColumnData?.birthLocation?.text || '',
+    height: props.mainColumnData?.displayableProperty?.value?.plainText || '',
+    image: props.aboveTheFold?.primaryImage?.url || '',
+    images: props.mainColumnData?.images?.edges
+      ?.filter((e) => e.__typename === "ImageEdge")
+      ?.map((e) => e.node.url) || [],
+    primaryProfessions: props.mainColumnData?.primaryProfessions
+      ?.map((e) => e.category.text) || [],
+    jobs: props.mainColumnData?.jobs
+      ?.map((e) => e.category.text) || [],
   };
 }
