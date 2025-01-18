@@ -35,5 +35,9 @@ export default async function getTitle(id) {
     images: props.mainColumnData.images.edges
       .filter((e) => e.__typename === "ImageEdge")
       .map((e) => e.node.url),
+    primaryProfessions: props.mainColumnData.primaryProfessions
+      .map((e) => e.category.text),
+    jobs: props.mainColumnData.jobs
+      .map((e) => e.category.text),
   };
 }
