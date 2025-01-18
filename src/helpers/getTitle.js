@@ -103,6 +103,11 @@ export default async function getTitle(id) {
       name: e.category.text,
       credits: e.credits.map((e) => e.name.nameText.text),
     })),
+    videos: props.aboveTheFoldData.primaryVideos.edges.map((e) => ({
+      type: e.node.playbackURLs[0].videoMimeType,
+      definition: e.node.playbackURLs[0].displayName.value,
+      url: e.node.playbackURLs[0].url,
+    })),
     ...(props.aboveTheFoldData.titleType.isSeries
       ? await seriesFetcher(id)
       : {}),
