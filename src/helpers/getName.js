@@ -29,12 +29,12 @@ export default async function getTitle(id) {
     imdb: `https://www.imdb.com/name/${id}`,
     name: props.aboveTheFold?.nameText?.text || '',
     alternativeNames: props.mainColumnData?.akas?.edges
-      ?.filter((e) => e.__typename === "NameAka")
+      ?.filter((e) => e.__typename === "NameAkaEdge")
       ?.map((e) => e.node.displayableProperty.value.plainText) || [],
     bio: props.aboveTheFold?.bio?.text?.plainText || '',
     birthDate: getDob(props.mainColumnData?.birthDate?.dateComponents) || '',
     birthLocation: props.mainColumnData?.birthLocation?.text || '',
-    height: props.mainColumnData?.displayableProperty?.value?.plainText || '',
+    height: props.mainColumnData?.height?.displayableProperty?.value?.plainText || '',
     image: props.aboveTheFold?.primaryImage?.url || '',
     images: props.mainColumnData?.images?.edges
       ?.filter((e) => e.__typename === "ImageEdge")
