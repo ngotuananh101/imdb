@@ -12,9 +12,28 @@ export default async function getTitle(id) {
 
   const props = json.props.pageProps;
 
+  const getDob = (lookFor) => {
+    let day = lookFor.day;
+    let month = lookFor.month;
+    let year = lookFor.year;
+
+    if (day && month && year) {
+      day = day.toString().padStart(2, "0");
+      month = month.toString().padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+  }
+
   return {
     id: id,
     imdb: `https://www.imdb.com/name/${id}`,
     name: props.aboveTheFold.nameText.text,
+    bio: props.aboveTheFoldData.bio.bioText.plainText,
+    birthDate: getDob(props.mainColumnData.birthDate.dateComponents),
+    birthLocation: props.mainColumnData.birthLocation.text,
+    image: props.aboveTheFoldData.primaryImage.url,
+    images: props.mainColumnData.titleMainImages.edges
+      .filter((e) => e.__typename === "ImageEdge")
+      .map((e) => e.node.url),
   };
 }
