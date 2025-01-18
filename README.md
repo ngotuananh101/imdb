@@ -31,20 +31,17 @@ After deployed, map the worker to a Domain Name to configure cache. Only Workers
 
 ## API 📡
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/12162111-12f08f8e-a76b-4cf4-a7b9-17cb9f95dd82?action=collection%2Ffork&collection-url=entityId%3D12162111-12f08f8e-a76b-4cf4-a7b9-17cb9f95dd82%26entityType%3Dcollection%26workspaceId%3D7efe0056-efcd-49b1-bfd8-0854d36c1065)
-
-| Endpoint                                                                                         | Method | Description                               | Example                                                                                       |
-| ------------------------------------------------------------------------------------------------ | ------ | ----------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `/search?query={query}`                                                                          | GET    | Search titles by title                    | [Try It](https://imdb-api.projects.thetuhin.com/search?query=Little%20Things)                 |
-| `/title/{imdb_id}`                                                                               | GET    | Get details of a title                    | [Try It](https://imdb-api.projects.thetuhin.com/title/tt6522580)                              |
-| `/reviews/{imdb_id}?option={helpfulness\|date\|votes\|rating}&sortOrder={asc\|desc}`             | GET    | Get reviews of a title                    | [Try It](https://imdb-api.projects.thetuhin.com/reviews/tt6522580?option=date&sortOrder=desc) |
-| `/title/{imdb_id}/season/{season_id}`                                                            | GET    | (New) Fetch a single season of a series   | [Try It](https://imdb-api.projects.thetuhin.com/title/tt6522580/season/4)                     |
-| `/user/{user_id}`                                                                                | GET    | (New) Fetch an user's info                | [Try It](https://imdb-api.projects.thetuhin.com/user/ur82525142)                              |
-| `/user/{user_id}/ratings?ratingFilter={1-10}&sort={most_recent\|oldest\|top_rated\|worst_rated}` | GET    | (New) Fetch an user's ratings and reviews | [Try It](https://imdb-api.projects.thetuhin.com/user/ur82525142/ratings)                      |
+| Endpoint                                                                                         | Method | Description                               |
+| ------------------------------------------------------------------------------------------------ | ------ | ----------------------------------------- |
+| `/search?query={query}`                                                                          | GET    | Search titles by title                    |
+| `/title/{imdb_id}`                                                                               | GET    | Get details of a title                    |
+| `/reviews/{imdb_id}?option={helpfulness\|date\|votes\|rating}&sortOrder={asc\|desc}`             | GET    | Get reviews of a title                    |
+| `/title/{imdb_id}/season/{season_id}`                                                            | GET    | (New) Fetch a single season of a series   |
+| `/user/{user_id}`                                                                                | GET    | (New) Fetch an user's info                |
+| `/user/{user_id}/ratings?ratingFilter={1-10}&sort={most_recent\|oldest\|top_rated\|worst_rated}` | GET    | (New) Fetch an user's ratings and reviews |
 
 ## License 🎯
 
-- Licensed under [Apache-2.0](https://github.com/tuhinpal/imdb-api/blob/master/LICENSE)
-- Made by [Tuhin Kanti Pal](https://github.com/tuhinpal)
+- Made by [PontaDev](https://github.com/ngotuananh101)
 
 ### Have a good day 🤘
